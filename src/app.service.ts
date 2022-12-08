@@ -13,7 +13,7 @@ export class AppService {
 
   async generateEvent(message){
     await this.communicationClient.emit(
-      'book_created',
+      'response_event',
      {"creation":message},
     );
   }
