@@ -12,6 +12,7 @@ export class AppService {
   }
 
   async generateEvent(message){
+    //event response will be sent back to communication  microservice
     await this.communicationClient.emit(
       'response_event',
      {"creation":message},

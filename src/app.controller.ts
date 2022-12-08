@@ -11,9 +11,11 @@ export class AppController {
     return this.appService.getHello();
   }
 
+  //listening to the queue data
   @EventPattern('book-created')
   async handleBookCreatedEvent(data: Record<string, unknown>) {
     console.log("data received from service1",data);
+    //generating response to communication microservice
     this.appService.generateEvent("success")
   }
 }
