@@ -14,5 +14,6 @@ export class AppController {
   @EventPattern('book-created')
   async handleBookCreatedEvent(data: Record<string, unknown>) {
     console.log("data received from service1",data);
+    this.appService.generateEvent("success")
   }
 }
